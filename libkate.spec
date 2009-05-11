@@ -1,16 +1,14 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:           libkate
-Version:        0.3.1
-Release:        3%{?dist}
+Version:        0.3.3
+Release:        1%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
 License:        BSD
 URL:            http://code.google.com/p/libkate/
 Source0:        http://libkate.googlecode.com/files/libkate-%{version}.tar.gz
-Patch0:         libkate-0.3.1-noredef.patch
-Patch1:         libkate-0.3.1-python_no_shebang.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel
@@ -56,10 +54,6 @@ The %{name}-utils package contains the katedec/kateenc binaries for %{name}.
 
 %prep
 %setup -q
-#Prevent conflict with GNU getline() in recent rawhide
-%patch0 -p1 -b .noredef
-#Remove shebangs
-%patch1 -p1 -b .noshebangs
 
 # We regenerate theses files at built step
 rm tools/kate_parser.{c,h}
@@ -128,6 +122,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon May 11 2009 kwizart < kwizart at gmail.com > - 0.3.3-1
+- Update to 0.3.3
+
 * Fri Apr 10 2009 kwizart < kwizart at gmail.com > - 0.3.1-3
 - Use Fedora compliant (using version) _docdir directory.
 - Remove shebangs when not needed.
