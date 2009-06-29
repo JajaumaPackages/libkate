@@ -2,7 +2,7 @@
 
 Name:           libkate
 Version:        0.3.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -50,6 +50,14 @@ Requires:       liboggz
 
 %description utils
 The %{name}-utils package contains the katedec/kateenc binaries for %{name}.
+
+%package docs
+Summary:        Documentation for %{name}
+Group:          Documentation
+BuildArch:      noarch
+
+%description docs
+The %{name}-docs package contains the docs for %{name}.
 
 
 %prep
@@ -103,7 +111,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(-,root,root,-)
 %doc examples/
-%doc %{_docdir}/libkate-%{version}/html
 %{_includedir}/kate/
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
@@ -120,8 +127,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/katedec.*
 %{_mandir}/man1/kateenc.*
 
+%files docs
+%defattr(-,root,root,-)
+%doc %{_docdir}/libkate-%{version}/html
+
 
 %changelog
+* Mon Jun 29 2009 kwizart < kwizart at gmail.com > - 0.3.3-2
+- Split -docs - Fix #508589
+
 * Mon May 11 2009 kwizart < kwizart at gmail.com > - 0.3.3-1
 - Update to 0.3.3
 
