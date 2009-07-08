@@ -53,8 +53,8 @@ The %{name}-utils package contains the katedec/kateenc binaries for %{name}.
 
 %package docs
 Summary:        Documentation for %{name}
-Group:          Applications/d
-Requires:       %{name} = %{version}-%{release}
+Group:          Documentation
+
 BuildArch:      noarch
 
 %description docs
