@@ -1,7 +1,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:           libkate
-Version:        0.3.6
+Version:        0.3.7
 Release:        1%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
@@ -134,6 +134,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Nov 25 2009 Nicolas Chauvet <kwizart@fedoraproject.org> - 0.3.7-1
+- Update to 0.3.7
+
 * Fri Oct 16 2009 kwizart < kwizart at gmail.com > - 0.3.6-1
 - Update to 0.3.6
 
