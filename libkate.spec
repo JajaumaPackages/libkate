@@ -2,7 +2,7 @@
 
 Name:           libkate
 Version:        0.3.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -134,6 +134,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Jul 21 2010 David Malcolm <dmalcolm@redhat.com> - 0.3.7-2
+- Rebuilt for https://fedoraproject.org/wiki/Features/Python_2.7/MassRebuild
+
 * Wed Nov 25 2009 Nicolas Chauvet <kwizart@fedoraproject.org> - 0.3.7-1
 - Update to 0.3.7
 
