@@ -2,7 +2,7 @@
 
 Name:           libkate
 Version:        0.3.7
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -17,7 +17,9 @@ BuildRequires:  liboggz
 BuildRequires:  libpng-devel
 BuildRequires:  bison
 BuildRequires:  flex
+%ifnarch s390 s390x
 BuildRequires:  valgrind
+%endif
 BuildRequires:  doxygen
  
 
@@ -134,6 +136,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Aug 28 2010 Dan Horák <dan[at]danny.cz> - 0.3.7-3
+- no valgrind on s390(x)
+
 * Wed Jul 21 2010 David Malcolm <dmalcolm@redhat.com> - 0.3.7-2
 - Rebuilt for https://fedoraproject.org/wiki/Features/Python_2.7/MassRebuild
 
