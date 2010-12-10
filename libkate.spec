@@ -1,8 +1,8 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name:           libkate
-Version:        0.3.7
-Release:        3%{?dist}
+Version:        0.3.8
+Release:        1%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -136,6 +136,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Dec 10 2010 Nicolas Chauvet <kwizart@gmail.com> - 0.3.8-1
+- Update to 0.3.8
+
 * Sat Aug 28 2010 Dan Horák <dan[at]danny.cz> - 0.3.7-3
 - no valgrind on s390(x)
 
