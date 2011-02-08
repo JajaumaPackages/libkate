@@ -2,7 +2,7 @@
 
 Name:           libkate
 Version:        0.3.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -136,6 +136,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.8-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Fri Dec 10 2010 Nicolas Chauvet <kwizart@gmail.com> - 0.3.8-1
 - Update to 0.3.8
 
