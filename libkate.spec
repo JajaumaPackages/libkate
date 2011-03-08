@@ -2,7 +2,7 @@
 
 Name:           libkate
 Version:        0.3.8
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -17,7 +17,7 @@ BuildRequires:  liboggz
 BuildRequires:  libpng-devel
 BuildRequires:  bison
 BuildRequires:  flex
-%ifnarch s390 s390x
+%ifnarch s390 s390x %{sparc} %{arm}
 BuildRequires:  valgrind
 %endif
 BuildRequires:  doxygen
@@ -136,6 +136,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Mar 08 2011 Dennis Gilmore <dennis@ausil.us> - 0.3.8-3
+- no valgrind on sparc or arm arches
+
 * Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.8-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
 
