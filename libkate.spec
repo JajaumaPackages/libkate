@@ -2,7 +2,7 @@
 
 Name:           libkate
 Version:        0.3.8
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -136,6 +136,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Dec 06 2011 Adam Jackson <ajax@redhat.com> - 0.3.8-4
+- Rebuild for new libpng
+
 * Tue Mar 08 2011 Dennis Gilmore <dennis@ausil.us> - 0.3.8-3
 - no valgrind on sparc or arm arches
 
