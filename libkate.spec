@@ -1,15 +1,12 @@
-%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
-
 Name:           libkate
-Version:        0.3.8
-Release:        8%{?dist}
+Version:        0.4.1
+Release:        1%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
 License:        BSD
 URL:            http://code.google.com/p/libkate/
 Source0:        http://libkate.googlecode.com/files/libkate-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel
 BuildRequires:  libogg-devel
@@ -17,7 +14,7 @@ BuildRequires:  liboggz
 BuildRequires:  libpng-devel
 BuildRequires:  bison
 BuildRequires:  flex
-%ifnarch s390 s390x %{sparc} %{arm}
+%ifnarch s390 %{sparc}
 BuildRequires:  valgrind
 %endif
 BuildRequires:  doxygen
@@ -72,8 +69,7 @@ rm tools/kate_lexer.c
 
 
 %build
-%configure --disable-static \
-  --docdir=%{_docdir}/%{name}-%{version}
+%configure --disable-static
 
 # Remove rpath
 sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
@@ -83,7 +79,6 @@ make %{?_smp_mflags}
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
@@ -96,9 +91,6 @@ touch -r $RPM_BUILD_ROOT%{_includedir}/kate/kate_config.h \
 make check
 
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 
 %post -p /sbin/ldconfig
 
@@ -106,20 +98,17 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-%defattr(-,root,root,-)
-%exclude %{_docdir}/libkate-%{version}/html
-%doc %{_docdir}/libkate-%{version}
+%exclude %{_docdir}/libkate/html
+%doc %{_docdir}/libkate
 %{_libdir}/*.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %doc examples/
 %{_includedir}/kate/
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 
 %files utils
-%defattr(-,root,root,-)
 %{python_sitelib}/kdj/
 %{_bindir}/KateDJ
 %{_bindir}/katalyzer
@@ -131,11 +120,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/kateenc.*
 
 %files docs
-%defattr(-,root,root,-)
-%doc %{_docdir}/libkate-%{version}/html
+%doc %{_docdir}/libkate/html
 
 
 %changelog
+* Mon Aug 12 2013 Nicolas Chauvet <kwizart@gmail.com> - 0.4.1-1
+- Update to 0.4.1
+- Spec file clean-up
+- Avoid valgrind restriction on certain arches
+- Use unversioned docdir - rhbz#993818
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.8-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
