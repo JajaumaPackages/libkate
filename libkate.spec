@@ -1,6 +1,6 @@
 Name:           libkate
 Version:        0.4.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -124,6 +124,9 @@ make check
 
 
 %changelog
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.4.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Mon Aug 12 2013 Nicolas Chauvet <kwizart@gmail.com> - 0.4.1-2
 - Update to 0.4.1
 - Spec file clean-up
