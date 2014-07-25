@@ -1,6 +1,6 @@
 Name:           libkate
 Version:        0.4.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -14,7 +14,7 @@ BuildRequires:  liboggz
 BuildRequires:  libpng-devel
 BuildRequires:  bison
 BuildRequires:  flex
-%ifarch %{ix86} x86_64 ppc ppc64 s390x %{arm}
+%ifarch %{ix86} x86_64 ppc ppc64 s390x
 BuildRequires:  valgrind
 %endif
 BuildRequires:  doxygen
@@ -124,6 +124,9 @@ make check
 
 
 %changelog
+* Fri Jul 25 2014 Nicolas Chauvet <kwizart@gmail.com> - 0.4.1-4
+- Update valgrind arches
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.4.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
