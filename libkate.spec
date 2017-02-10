@@ -1,6 +1,6 @@
 Name:           libkate
 Version:        0.4.1
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
@@ -124,6 +124,9 @@ make check
 
 
 %changelog
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.4.1-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.4.1-8
 - https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
 
