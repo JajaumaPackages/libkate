@@ -18,6 +18,7 @@ BuildRequires:  flex
 BuildRequires:  valgrind
 %endif
 BuildRequires:  doxygen
+BuildRequires:  util-linux
  
 
 %description
@@ -126,6 +127,7 @@ make check
 %changelog
 * Thu Sep 07 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.4.1-12
 - Fix download URL
+- Require util-linux for building (getopt in tests)
 
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.4.1-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
