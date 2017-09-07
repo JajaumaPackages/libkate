@@ -1,12 +1,12 @@
 Name:           libkate
 Version:        0.4.1
-Release:        11%{?dist}
+Release:        12%{?dist}
 Summary:        Libraries to handle the Kate bitstream format
 
 Group:          System Environment/Libraries
 License:        BSD
 URL:            http://code.google.com/p/libkate/
-Source0:        http://libkate.googlecode.com/files/libkate-%{version}.tar.gz
+Source0:        https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libkate/libkate-%{version}.tar.gz
 
 BuildRequires:  python-devel
 BuildRequires:  libogg-devel
@@ -124,6 +124,9 @@ make check
 
 
 %changelog
+* Thu Sep 07 2017 Jajauma's Packages <jajauma@yandex.ru> - 0.4.1-12
+- Fix download URL
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.4.1-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
